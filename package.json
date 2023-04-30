@@ -1,0 +1,14 @@
+{
+  "name": "Portfolio Valentin Baudron",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/main.scss css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tMulard/Portfolio-Valentin-Baudron.git"
+  },
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}

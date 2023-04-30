@@ -1,0 +1,58 @@
+.loaderContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: disappear 2s;
+  animation-fill-mode: forwards;
+  z-index: 999;
+
+  .cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(49, 47, 47);
+    z-index: 999;
+  }
+
+  .loader {
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 45%;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    border-radius: 50%;
+    border-top: 5px dotted var(--secondary);
+    border-left: 5px dotted var(--secondary);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,626 @@
+@import "reset";
+@import "header";
+
+
+/* 
+=========================
+          FONTS
+=========================
+
+Titre et Logo: Shrikhand 50px
+Texte: Roboto 25px
+
+*/
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../fonts/Shrikhand-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-display: swap;
+}
+
+:root {
+  --primary: #9356dc;
+  --secondary: #ff79da;
+  --tertiary: #99e2d0;
+}
+
+/*
+  IIII
+  I   I
+  I   I
+  I   I
+  IIII
+  I   I
+  I   I
+  I   I
+  IIII
+*/
+
+body {
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  font-family: "Roboto";
+}
+
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  padding-bottom: 5px;
+}
+
+h2 {
+  color: black;
+  font-weight: bold;
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  color: grey;
+  font-family: "Roboto";
+}
+
+i {
+  margin: 0 10px;
+}
+
+input {
+  display: none;
+  font-weight: bold;
+}
+
+#ExploreButton {
+  background: linear-gradient(
+    to top,
+    #ff79da,
+    #f272da,
+    #e56cdb,
+    #d767db,
+    #c862dc,
+    #b75ddc,
+    #a659dc,
+    #9356dc
+  );
+  color: white;
+  border-radius: 50px;
+  transition: 0.3s;
+  padding: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+#ExploreButton:hover {
+  box-shadow: 2px 2px 2px rgba(126, 126, 126, 0.493);
+  color: white;
+  background-color: var(--primary);
+}
+
+label {
+  padding: 10px;
+  margin: 5px 2px;
+  border-radius: 50px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  display: inline-block;
+  font-family: "Roboto";
+}
+
+/*
+IIIIIII
+I      I
+I      I
+I      I
+IIIIIII
+I    I
+I     I
+I      I
+I       I
+*/
+
+.Search {
+  padding: 0 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 35%;
+  width: 100%;
+
+  .City {
+    box-shadow: inset 0 1px 2px rgb(212, 212, 212);
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+
+    form {
+      display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+	  align-items: center;
+
+      input {
+        display: block;
+        border: none;
+        background-color: transparent;
+        z-index: 10;
+        color: black;
+      }
+    }
+  }
+
+  .Finder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    padding: 40px 30px;
+
+    h1 {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      padding-bottom: 30px;
+      font-size: large;
+    }
+  }
+}
+
+.Fonctionnement {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  width: 90%;
+}
+
+.InstructionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.InstructionItemContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.InstructionNumber {
+  background-color: rgb(147, 86, 220);
+  border-radius: 50%;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  left: calc(-25px / 2);
+}
+
+.Instructions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 1px 2px grey;
+  border-radius: 30px;
+  padding: 30px 50px;
+  margin: 10px 5px 10px 0;
+  font-weight: bold;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  z-index: 1;
+}
+
+.Instructions:hover {
+  background-color: rgb(245, 237, 255);
+  cursor: pointer;
+  transition: 0.3s;
+
+  i {
+    color: var(--primary);
+  }
+}
+
+.Instructions i {
+  color: grey;
+  padding: 0 20px;
+}
+
+.Restaurants {
+  margin: 0 auto;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  padding: 50px 0;
+}
+
+.Restaurants > h2 {
+  margin-left: 20px;
+}
+
+.RestaurantList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+.RestaurantItem {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  margin: 2% auto;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.RestaurantItem:hover {
+  box-shadow: 2px 2px 2px rgba(126, 126, 126, 0.493);
+}
+
+.imageRestaurant {
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.New {
+  background-color: var(--tertiary);
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 3px;
+}
+
+.descriptionRestaurant {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
+  line-height: 20px;
+}
+
+#image1 {
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+#image2 {
+  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+#image3 {
+  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+#image4 {
+  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.Like {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+
+  i {
+    -webkit-text-stroke: 1px #000000;
+    color: white;
+    transition: 1s;
+  }
+}
+
+@for $i from 1 to 9 {
+  #L#{$i}:checked ~ #Li#{$i} i {
+    background: linear-gradient(
+      to top,
+      #ff79da,
+      #f272da,
+      #e56cdb,
+      #d767db,
+      #c862dc,
+      #b75ddc,
+      #a659dc,
+      #9356dc
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0px;
+  }
+}
+
+
+
+
+/////////////////////////////////////////////////////////
+/// 
+///       CSS Baudron
+/// 
+/// /////////////////////////////////////////////////////
+
+
+// .haut_de_page{
+// 	background: cyan;
+// }
+// body{
+// 	background-color: rgb(0,0,255);
+// 	cursor:url(wolf-paw.png), auto;
+// }
+
+// .logo{
+// 	width:15%; 
+// 	display: block;
+// 	margin-left: auto;
+//     margin-right: auto ;
+// 	margin-top: -20px;
+// 	padding-top: 20px;}
+
+
+//  ul {
+// 	margin-left:auto;
+// 	margin-right:auto;
+//  	padding-top:20px;
+// 	padding-left:0px;
+// 	list-style-type:none;
+// 	text-align:center;}
+
+
+//  li {
+// 	float:left;
+// 	margin:auto;
+// 	background-color:rgb(0,0,255);}
+
+
+// ul li a {
+// 	display:inline-block;
+// 	width:210px;
+// 	color:rgb(171,205,3);
+// 	text-decoration:none;
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	font-size:18px;
+// 	padding-left:42px;
+// 	padding-right:42px;
+// 	padding-top:20px;
+// 	padding-bottom:20px;}
+
+
+//  ul li a:hover { 
+// 	color:rgb(255,0,0);
+// 	background-color:rgb(255,255,255);} 
+
+
+// ul li:hover ul {
+// 	display:block;}
+
+
+// li:hover ul li {
+// 	float:none;}
+
+
+// .haut{
+// 	background-color:rgb(0,0,255);
+// 	display:inline-block;
+// 	width:110px;		
+// 	list-style-type:none;
+// 	color:rgb(255,255,255);
+// 	text-decoration:none;		
+// 	margin-left:20px;
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	padding:10px;}
+
+
+// .haut:hover { 
+// 	color:rgb(255,0,0);
+// 	background-color:rgb(255,255,255);} 
+
+
+// haut:hover haut {
+// 	display:block;}
+
+// haut:hover haut {
+// 	float:none;}
+
+
+// .zoneText_1{
+// 	margin-left:20px;
+// 	width: 1126px;
+// 	padding-top:10px; 
+// 	padding-bottom:10px;
+// 	text-align: left;
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	background: rgb(0,0,0);
+// 	color: rgb(255,0,0);
+// 	font-size:17px;}
+
+
+// .titre{
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	margin-left:20px;
+// 	font-size:28px;
+// 	color:rgb(255,255,255);}
+
+
+// .Intro{
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	margin-left:20px;
+// 	font-size:17px;}
+
+
+// .bordure{
+// 	background: rgb(0,100,127);
+// 	margin-left:80px;
+// 	margin-right:80px;}
+
+
+// .contact {
+// 	background-color:rgb(0,0,255);
+// 	padding:10px;
+// 	width:1157px; 
+// 	text-align:right; 
+// 	color:rgb(255,255,255);
+// 	font-family: Oswald,Helvetica,sans-serif;}
+
+// .img1_config{
+// 	width:30%; 
+// 	display: block;
+// 	float: right;}
+
+
+// .img2_config{
+// 	width:30%; 
+// 	display: block;
+// 	float: right;}
+
+
+// .img3_config{
+// 	width:20%; 
+// 	display: block;
+// 	float: right;}
+
+
+// .img5_config{
+// 	width:40%; 
+// 	display: block;
+// 	float: right;}
+
+// .encap_fonctionnement{
+// 	width:40%; 
+// 	display: block;
+// 	float: right;}
+
+
+// .rs_fonctionnement{
+// 	width:35%; 
+// 	display: block;
+// 	float: left;}
+
+
+// .tel_accueil{
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	margin-left:200px;
+// 	font-size:22px;}
+
+// .citation_accueil{
+// 	margin-left:130px;
+// 	width: 1000px;
+// 	padding-top:30px; 
+// 	padding-bottom:10px;
+// 	text-align: left;
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	background: rgb(0,0,0);
+// 	font-size:22px;
+// 	color:rgb(255,0,0);}
+
+//  .menu_page_principale {
+// 	margin-right:auto;
+// 	padding-top:40px;
+// 	padding-left:0px;
+// 	list-style-type:none;
+// 	text-align:center;}
+
+
+// .I1{
+// 	display:inline-block;
+// 	width:100px;
+//  	color:rgb(255,255,255);
+// 	text-decoration:none;
+// 	font-family: Oswald,Helvetica,sans-serif;
+// 	font-size:20px;
+// 	padding-left:25px;
+// 	padding-right:80px;
+// 	padding-top:30px;
+// 	padding-bottom:30px;}
+
+
+// .logo_page_principale{
+// 	width:50%; 
+// 	display: block;
+	
+// 	margin-left: auto;
+//         margin-right: auto ;
+// 	margin-top: -20px;
+// 	padding-top: 30px;}
+
+// .logo_principal{
+// 	width:10%; 
+// 	display: block;
+// 	float : left;
+// 	margin-top: -20px;
+// 	padding-top: 30px;}
+
+// .mail{	
+// 	background-color:rgb(0,0,255); 
+// 	text-align:right; 
+// 	color:rgb(255,255,255);
+// 	font-family: Oswald,Helvetica,sans-serif;}
+	
+// .mail:hover { 
+// 	color:rgb(255,0,0);
+// 	background-color:rgb(0,0,0);} 
+
+// .image{width:16.5%; 
+// 	margin-left: auto;
+//     margin-right: auto;
+// 	display : inline-block;
+// }
+
+// .personnages {
+// 	width:7%; 
+// 	margin-left: auto;
+//     margin-right: auto;	
+// 	color : rgb(255,0,0);
+// }
+
+
+// .temoin {
+// 	font-style : italic;
+// }
+//////////////////////////////////////////
+ 
+@import "footer";
